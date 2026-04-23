@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Exercícios DOM</title>
+</head>
+<body>
+
+<h1 id="titulo">TDS2</h1>
+<button onclick="mudarTexto()">Mudar Texto</button>
+
+<br><br>
+
+<input type="text" id="nome1" placeholder="Digite seu nome">
+<button onclick="saudacao()">Entrar</button>
+<p id="mensagem"></p>
+
+<p id="frase">Hoje é um ótimo dia para programar</p>
+<button onclick="mudarFrase()">Mudar frase</button>
+
+<br><br>
+
+<input type="text" id="nome2" placeholder="Digite seu nome">
+<button onclick="verificarNome()">Enviar</button>
+<p id="respostaNome"></p>
+
+<button onclick="modoEscuro()">Modo escuro</button><br><br>
+
+<input type="text" id="nota" placeholder="Digite sua nota">
+<button onclick="Verificarnota()">Verificar nota</button>
+<p id="Verificar"></p>
+
+<p id="apareceu"></p>
+<button onclick="surpresa()">Clique para surpresa</button>
+
+<br><br>
+
+<h1 id="frase2">bom dia</h1>
+<button onclick="Destacartexto()">Destacar texto</button>
+
+<div>
+<p id="texto">Este é um texto qualquer</p>
+<button onclick="destacar()">Destacar texto</button>
+</div>
+
+<!-- 9 -->
+<div>
+<input type="text" id="campoTexto" placeholder="Digite algo">
+<button onclick="contar()">Verificar</button>
+<p id="resultado"></p>
+</div>
+
+<!-- 10 -->
+<div>
+<p id="textoCor">Este texto pode mudar de cor</p>
+<button onclick="mudarCor()">Mudar cor</button>
+</div>
+
+<!-- 11 -->
+<div>
+<p id="textoSumir">Este texto pode desaparecer.</p>
+<button onclick="esconder()">Esconder texto</button>
+</div>
+
+<!-- 12 -->
+<div>
+<input type="number" id="idade" placeholder="Digite sua idade">
+<button onclick="calcular()">Calcular</button>
+<p id="meses"></p>
+</div>
+
+<!-- 13 -->
+<div>
+<input type="number" id="idade2" placeholder="Digite sua idade">
+<button onclick="verificar()">Verificar</button>
+<p id="respostaIdade"></p>
+</div>
+
+<script>
+
+// 1
+function mudarTexto() {
+    document.getElementById("titulo").innerText = "Aprendendo DOM com JavaScript"
+}
+
+// 2
+function saudacao() {
+    let nome = document.getElementById("nome1").value
+    document.getElementById("mensagem").innerText = "Bem-vindo, " + nome
+}
+
+// 3
+function mudarFrase() {
+    document.getElementById("frase").innerText = "Manipulando HTML com JavaScript"
+}
+
+// 4
+function verificarNome() {
+    let nome = document.getElementById("nome2").value
+    let resposta = document.getElementById("respostaNome")
+
+    if (nome === "") {
+        resposta.innerText = "Digite um nome!"
+    } else {
+        resposta.innerText = "Olá, " + nome
+    }
+}
+
+// 5
+function modoEscuro() {
+    document.body.style.backgroundColor = "black"
+    document.body.style.color = "white"
+}
+
+// 6
+function Verificarnota() {
+    let nota = document.getElementById("nota").value
+    let resposta = document.getElementById("Verificar")
+
+    if (nota >= 7) {
+        resposta.innerText = "Aluno aprovado"
+    } else {
+        resposta.innerText = "Aluno reprovado"
+    }
+}
+
+// 7
+function surpresa() {
+    document.getElementById("apareceu").innerText = "Você encontrou a mensagem secreta"
+}
+
+// 8
+function Destacartexto() {
+    let texto = document.getElementById("frase2")
+    texto.style.color = "red"
+    texto.style.fontWeight = "bold"
+}
+
+// EXTRA 8
+function destacar() {
+    let texto = document.getElementById("texto")
+    texto.style.color = "red"
+    texto.style.fontWeight = "bold"
+}
+
+// 9
+function contar() {
+    let texto = document.getElementById("campoTexto").value
+    document.getElementById("resultado").innerText =
+        "Você digitou " + texto.length + " caracteres"
+}
+
+// 10
+function mudarCor() {
+    document.getElementById("textoCor").style.color = "blue"
+}
+
+// 11
+function esconder() {
+    document.getElementById("textoSumir").style.display = "none"
+}
+
+// 12
+function calcular() {
+    let idade = document.getElementById("idade").value
+    document.getElementById("meses").innerText =
+        "Você já viveu " + (idade * 12) + " meses"
+}
+
+// 13
+function verificar() {
+    let idade = document.getElementById("idade2").value
+    let resposta = document.getElementById("respostaIdade")
+
+    if (idade >= 18) {
+        resposta.innerText = "Você é maior de idade"
+    } else {
+        resposta.innerText = "Você é menor de idade"
+    }
+}
+
+</script>
+
+</body>
+</html>
